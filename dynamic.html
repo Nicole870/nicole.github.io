@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440">
+  <title>动态设计作品</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #111827 0%, #FF69B4 100%);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .img-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0;
+    }
+    .work-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 360px;
+      margin: 0 20px;
+    }
+    .img-list video {
+      width: 360px;
+      height: 200px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 4px 24px rgba(255,105,180,0.15);
+      background: #222;
+      display: block;
+    }
+    .designer-works-intro {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      padding: 20px 18px;
+      margin: 18px 0 0 0;
+      width: 360px;
+      height: 120px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+    @media (max-width: 1200px) {
+      .img-list { flex-direction: column; align-items: center; }
+      .work-block { margin: 0 0 32px 0; }
+    }
+    @media (max-width: 900px) {
+      .img-list { flex-direction: column; gap: 0; }
+      .work-block, .img-list video, .designer-works-intro { width: 90vw; max-width: 360px; }
+      .designer-works-intro { height: 120px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="img-list">
+    <div class="work-block">
+      <video src="D:/合成 1.mp4" controls></video>
+      <div class="designer-works-intro">
+        <h3 style="color: #FF69B4; font-size: 20px; font-weight: bold; margin-bottom: 8px;">作品：动态合成</h3>
+        <p style="color: #4B5563; font-size: 15px; line-height: 22px; margin: 0 0 8px 0;">合成动画，展现多元素融合的视觉冲击力。</p>
+        <div style="color: #6B7280; font-size: 14px; margin-top: 4px;">相关软件：After Effects</div>
+      </div>
+    </div>
+    <div class="work-block">
+      <video src="D:/北京动态海报无音乐1.mp4" controls></video>
+      <div class="designer-works-intro">
+        <h3 style="color: #FF69B4; font-size: 20px; font-weight: bold; margin-bottom: 8px;">作品：动态海报</h3>
+        <p style="color: #4B5563; font-size: 15px; line-height: 22px; margin: 0 0 8px 0;">北京主题动态海报，突出城市文化与现代感。</p>
+        <div style="color: #6B7280; font-size: 14px; margin-top: 4px;">相关软件：After Effects、Photoshop</div>
+      </div>
+    </div>
+    <div class="work-block">
+      <video src="D:/循环2314010312牛潇可.mp4" controls></video>
+      <div class="designer-works-intro">
+        <h3 style="color: #FF69B4; font-size: 20px; font-weight: bold; margin-bottom: 8px;">作品：循环动画</h3>
+        <p style="color: #4B5563; font-size: 15px; line-height: 22px; margin: 0 0 8px 0;">循环动画，表现节奏与动感，适合新媒体传播。</p>
+        <div style="color: #6B7280; font-size: 14px; margin-top: 4px;">相关软件：After Effects</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

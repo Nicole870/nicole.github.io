@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440">
+  <title>疯狂创意 - 品牌与设计服务</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+        margin: 0;
+        font-family: 'Roboto', Arial, sans-serif;
+        background-color: #111827;
+        color: #111827; /* Default text color */
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 32px;
+        background-color: transparent;
+        height: 88px;
+    }
+    .navbar-logo {
+        font-family: 'Pacifico', cursive;
+        font-size: 30px;
+        color: #FFFFFF;
+    }
+    .navbar-menu {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+    .navbar-menu a {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-size: 16px;
+        margin: 0 8px;
+    }
+    .navbar-btn {
+        background-color: #FFFFFF;
+        color: #FF69B4;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 24px;
+    }
+
+    .banner {
+        background: url('https://image-resource.mastergo.com/159567297570065/159567297570069/527997e645786de9bf72c234e91042a1.png') center/cover no-repeat;
+        height: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .banner-content {
+        /* background: rgba(255,255,255,0.85); */
+        border-radius: 24px;
+        padding: 60px 40px;
+        max-width: 700px;
+    }
+    .banner-subtitle {
+        font-size: 20px;
+        color: #FDE047;
+        margin-bottom: 16px;
+    }
+    .banner-title {
+        font-size: 72px;
+        font-weight: bold;
+        color: #FFFFFF;
+        margin: 0 0 24px 0;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        line-height: 72px;
+    }
+    .banner-desc {
+        font-size: 20px;
+        color: #FFFFFF;
+        margin-bottom: 32px;
+        line-height: 28px;
+    }
+    .banner-btn {
+        background-color: #FFFFFF;
+        color: #FF69B4;
+        border: none;
+        border-radius: 4px;
+        padding: 12px 32px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .section-header {
+        text-align: center;
+        margin: 80px 0 40px 0;
+    }
+    .section-header h2 {
+        font-size: 36px;
+        font-weight: bold;
+        color: #000000;
+        margin-bottom: 8px;
+        line-height: 40px;
+    }
+    .section-header p {
+        font-size: 16px;
+        color: #4B5563;
+        line-height: 24px;
+    }
+
+    .services {
+        background-color: #FFFFFF;
+        padding: 80px 32px;
+    }
+    .service-list {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+    .service-item {
+        background-color: #F9FAFB;
+        border-radius: 12px;
+        padding: 32px;
+        width: 400px;
+        text-align: center;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .service-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        margin: 0 auto 24px auto;
+        background-color: #FF69B4; /* Default color */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .service-icon svg {
+        width: 24px;
+        height: 24px;
+        fill: #FFFFFF;
+    }
+    .service-item h3 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #000000;
+        margin-bottom: 12px;
+        line-height: 28px;
+    }
+    .service-item p {
+        color: #4B5563;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .works {
+        background-color: #F9FAFB;
+        padding: 80px 32px;
+    }
+    .work-list {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+    .work-item {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        width: 437px; /* Adjusted width based on DSL */
+        height: 300px;
+        background-color: #FFFFFF;
+    }
+    .work-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .testimonials {
+        background-color: #FFFFFF;
+        padding: 80px 32px;
+    }
+    .testimonial-list {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+    .testimonial-item {
+        background-color: #F9FAFB;
+        border-radius: 12px;
+        padding: 32px;
+        width: 400px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 200px;
+    }
+    .testimonial-item p {
+        color: #4B5563;
+        font-size: 16px;
+        margin-bottom: 24px;
+        line-height: 24px;
+    }
+    .testimonial-user {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+    .user-name {
+        font-weight: bold;
+        color: #000000;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .user-title {
+        color: #6B7280;
+        font-size: 16px; /* Adjusted size based on DSL */
+        line-height: 24px;
+    }
+
+    .cta {
+        background-color: #FF69B4;
+        color: #FFFFFF;
+        padding: 80px 32px;
+        text-align: center;
+    }
+    .cta-content h2 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 16px;
+        line-height: 40px;
+    }
+    .cta-content p {
+        font-size: 18px;
+        margin-bottom: 32px;
+        line-height: 28px;
+    }
+    .cta-btn {
+        background-color: #FFFFFF;
+        color: #FF69B4;
+        border: none;
+        border-radius: 4px;
+        padding: 12px 32px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .footer {
+        background-color: #111827;
+        color: #FFFFFF;
+        padding: 48px 32px 0 32px;
+    }
+    .footer-main {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-bottom: 32px;
+        border-bottom: 1px dashed #1F2937;
+        flex-wrap: wrap;
+        gap: 20px; /* Added gap for wrapping */
+    }
+    .footer-col {
+        width: 320px;
+    }
+    .footer-logo {
+        font-family: 'Pacifico', cursive;
+        font-size: 24px;
+        color: #FFFFFF;
+        margin-bottom: 16px;
+        line-height: 32px;
+    }
+    .footer-col h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 16px;
+        line-height: 24px;
+    }
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .footer-col li {
+        color: #9CA3AF;
+        font-size: 16px;
+        margin-bottom: 12px;
+        line-height: 24px;
+    }
+    .footer-copyright {
+        text-align: center;
+        color: #9CA3AF;
+        font-size: 16px;
+        padding: 32px 0 0 0;
+        line-height: 24px;
+    }
+
+    @media (max-width: 1200px) {
+        .navbar-menu {
+            gap: 16px;
+        }
+        .navbar-menu a, .navbar-btn {
+            margin: 0 4px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .navbar, .footer-main {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .navbar-menu, .footer-col {
+            width: 100%;
+            text-align: center;
+            gap: 16px;
+            justify-content: center;
+        }
+        .navbar-menu a {
+            margin: 0 8px;
+        }
+        .service-list, .work-list, .testimonial-list {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .service-item, .work-item, .testimonial-item, .footer-col {
+            width: 90%;
+            max-width: 500px;
+        }
+        .work-item {
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+        }
+        .work-item img {
+            height: auto;
+        }
+        .banner-title {
+            font-size: 56px;
+            line-height: 60px;
+        }
+        .banner-desc, .banner-subtitle, .banner-btn {
+            font-size: 18px;
+            line-height: 24px;
+        }
+        .section-header h2, .cta-content h2 {
+            font-size: 28px;
+            line-height: 36px;
+        }
+        .footer-main {
+            border-bottom: none;
+        }
+        .footer-col h3 {
+            margin-top: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar, .footer-main {
+            padding: 16px;
+        }
+        .section-header, .services, .works, .testimonials, .cta, .footer {
+            padding: 40px 16px;
+        }
+        .banner {
+            height: 600px;
+        }
+        .banner-content {
+            padding: 40px 20px;
+        }
+        .banner-title {
+            font-size: 40px;
+            line-height: 48px;
+        }
+        .banner-desc, .banner-subtitle, .banner-btn {
+            font-size: 16px;
+            line-height: 20px;
+        }
+        .section-header h2, .cta-content h2 {
+            font-size: 24px;
+            line-height: 32px;
+        }
+        .section-header p {
+            font-size: 14px;
+        }
+        .service-item, .testimonial-item {
+            padding: 20px;
+        }
+        .service-item h3, .service-item p, .testimonial-item p, .user-name, .user-title, .footer-col h3, .footer-col li, .footer-copyright {
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .footer-logo {
+            font-size: 20px;
+            line-height: 28px;
+        }
+        .footer-main {
+            gap: 30px;
+        }
+    }
+  </style>
+</head>
+<body style="background-color: #FF69B4;">
+  <!-- 顶部导航栏 -->
+  <nav class="navbar">
+    <div class="navbar-logo" style="color: #FFFFFF; font-family: 'Pacifico', cursive; font-size: 30px;">logo</div>
+    <div class="navbar-menu">
+      <a href="#" style="color: #FFFFFF; font-size: 16px;">首页</a>
+      <a href="#services" style="color: #FFFFFF; font-size: 16px;">专业服务</a>
+      <a href="#about" style="color: #FFFFFF; font-size: 16px;">关于我们</a>
+      <button class="navbar-btn" style="background-color: #FFFFFF; color: #FF69B4; border-radius: 4px; padding: 8px 24px; font-size: 16px; font-weight: bold;">开始创作</button>
+    </div>
+  </nav>
+
+  <!-- Banner/头图区块 -->
+  <section class="banner">
+    <div class="banner-content">
+      <div class="banner-subtitle">让创意疯狂</div>
+      <h1 class="banner-title">创意无限 · 设计无界</h1>
+      <p class="banner-desc">为创业团队打造独特的网站与应用设计 让你的品牌从此与众不同 </p>
+      <button class="banner-btn" onclick="alert('设计师微信号：13699198395')">预约咨询</button>
+    </div>
+  </section>
+
+  <!-- 设计师自我介绍区块 -->
+  <section class="designer-intro" style="background-color: #F9FAFB; padding: 80px 32px; text-align: center;">
+    <div class="intro-content" style="max-width: 800px; margin: 0 auto;">
+      <img src="D:\创意编程\牛潇可自画像2314010312\sketch_250317a\2314010312牛潇可作业1.png" alt="设计师照片" style="width: 150px; height: 150px; border-radius: 50%; border: 6px solid #FF69B4; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto; box-shadow: 0 4px 16px rgba(255,105,180,0.12);">
+      <h2 style="color: #000000; font-size: 36px; font-weight: bold; margin-bottom: 16px; line-height: 40px;">关于设计师</h2>
+      <p style="color: #4B5563; font-size: 18px; line-height: 28px;">大家好！我的名字是牛潇可，我是一位充满热情的创意设计师，专注于为品牌打造独特且富有影响力的视觉形象。凭借多年的经验，我致力于将创意转化为实际的设计方案，帮助客户实现业务目标。我坚信好的设计不仅美观，更能有效沟通和打动人心。</p>
+    </div>
+  </section>
+
+  <!-- 服务区块 -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <h2>我们的服务</h2>
+      <p>专业的设计服务，助力品牌升级</p>
+    </div>
+    <div class="service-list">
+      <div class="service-item" onclick="window.open('graphic.html','_blank')" style="cursor:pointer;">
+        <div class="service-icon service-icon1"></div>
+        <h3>平面设计</h3>
+        <p>打造独特的平面视觉效果</p>
+      </div>
+      <div class="service-item" onclick="window.open('dynamic.html','_blank')" style="cursor:pointer;">
+        <div class="service-icon service-icon2"></div>
+        <h3>动态设计</h3>
+        <p>创意动态设计，让视觉动起来</p>
+      </div>
+      <div class="service-item" onclick="window.open('app.html','_blank')" style="cursor:pointer;">
+        <div class="service-icon service-icon3"></div>
+        <h3>应用设计</h3>
+        <p>专业的移动应用界面设计</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 精选作品区块 -->
+  <section class="works">
+    <div class="section-header">
+      <h2>精选作品</h2>
+      <p>展现我们的创意实力</p>
+    </div>
+    <div class="work-list">
+      <div class="work-item"><img src="https://image-resource.mastergo.com/159567297570065/159567297570069/ceb2531b51a9eb1e05a1fa42400b71a0.png" alt="作品1"></div>
+      <div class="work-item"><img src="https://image-resource.mastergo.com/159567297570065/159567297570069/b8c8902feb652ec614d9b7843a07f73b.png" alt="作品2"></div>
+      <div class="work-item"><img src="https://image-resource.mastergo.com/159567297570065/159567297570069/5266028fe934f58181cf87a09c8dd9e7.png" alt="作品3"></div>
+    </div>
+  </section>
+
+  <!-- 客户评价区块 -->
+  <section class="testimonials">
+    <div class="section-header">
+      <h2>客户评价</h2>
+      <p>听听他们怎么说</p>
+    </div>
+    <div class="testimonial-list">
+      <div class="testimonial-item">
+        <p>设计团队非常专业，从需求沟通到最终交付都很完美，帮助我们的品牌形象有了质的提升。</p>
+        <div class="testimonial-user">
+          <span class="user-name">张雨晨</span>
+          <span class="user-title">科技公司 CEO</span>
+        </div>
+      </div>
+      <div class="testimonial-item">
+        <p>创意十足的设计团队，让我们的产品界面焕然一新，用户反馈非常好。</p>
+        <div class="testimonial-user">
+          <span class="user-name">李思远</span>
+          <span class="user-title">互联网创业者</span>
+        </div>
+      </div>
+      <div class="testimonial-item">
+        <p>设计师们的专业水平很高，能准确理解我们的需求，并提供创新的解决方案。</p>
+        <div class="testimonial-user">
+          <span class="user-name">王梓萱</span>
+          <span class="user-title">品牌总监</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创意之旅区块 -->
+  <section class="cta">
+    <div class="cta-content">
+      <h2>开启创意之旅</h2>
+      <p>让我们一起打造令人惊叹的设计</p>
+      <button class="cta-btn" onclick="alert('设计师微信号：13599198395')">立即联系</button>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-col">
+        <div class="footer-logo">logo</div>
+        <p>创意无限，设计无界</p>
+      </div>
+      <div class="footer-col">
+        <h3>服务</h3>
+        <ul>
+          <li>品牌设计</li>
+          <li>网站设计</li>
+          <li>应用设计</li>
+          <li>平面设计</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li>团队介绍</li>
+          <li>设计理念</li>
+          <li>工作机会</li>
+          <li>联系我们</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>联系方式</h3>
+        <ul>
+          <li>电话：136-9919-8395</li>
+          <li>邮箱：1957833604@qq.com</li>
+          <li>地址：北京市房山区北京工商大学</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      © 2024 疯狂创意. 保留所有权利
+    </div>
+  </footer>
+</body>
+</html>

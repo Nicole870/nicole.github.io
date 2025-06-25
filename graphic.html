@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440">
+  <title>平面设计作品</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #111827 0%, #FF69B4 100%);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .img-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0;
+    }
+    .work-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 360px;
+      margin: 0 20px;
+    }
+    .img-list img {
+      width: 360px;
+      height: 200px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 4px 24px rgba(255,105,180,0.15);
+      background: #222;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+      display: block;
+    }
+    .img-list img:hover {
+      box-shadow: 0 8px 32px rgba(255,105,180,0.25);
+    }
+    .designer-works-intro {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      padding: 20px 18px;
+      margin: 18px 0 0 0;
+      max-width: 360px;
+      text-align: center;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 24px;
+      box-shadow: 0 8px 32px #FF69B4;
+      background: #222;
+    }
+    .modal-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: #fff;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 50%;
+      z-index: 2;
+      transition: background 0.2s;
+    }
+    .modal-btn:hover { background: rgba(255,105,180,0.5); }
+    .modal-btn.left { left: -60px; }
+    .modal-btn.right { right: -60px; }
+    @media (max-width: 1200px) {
+      .img-list { flex-direction: column; align-items: center; }
+      .work-block { margin: 0 0 32px 0; }
+    }
+    @media (max-width: 900px) {
+      .img-list { flex-direction: column; gap: 0; }
+      .work-block, .img-list img, .designer-works-intro { width: 90vw; max-width: 360px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="img-list">
+    <div class="work-block">
+      <img src="D:/建模牛潇可3414010312/渲染图背景统一.jpg" alt="作品1" id="img1" onclick="showModal()">
+      <div class="designer-works-intro" style="margin: 18px 0 0 0;">
+        <h3 style="color: #FF69B4; font-size: 20px; font-weight: bold; margin-bottom: 8px;">作品：建模渲染</h3>
+        <p style="color: #4B5563; font-size: 15px; line-height: 22px; margin: 0 0 8px 0;">建模渲染作品，展现空间与光影的结合，突出结构美感。</p>
+        <div style="color: #6B7280; font-size: 14px; margin-top: 4px;">相关软件：Maya</div>
+      </div>
+    </div>
+    <div class="work-block">
+      <img src="D:/桌面/梅兰芳纪念馆比赛/未标题-1-恢复的.jpg" alt="作品2" id="img2" onclick="showModal2()">
+      <div class="designer-works-intro" style="margin: 18px 0 0 0;">
+        <h3 style="color: #FF69B4; font-size: 20px; font-weight: bold; margin-bottom: 8px;">作品：宣传册</h3>
+        <p style="color: #4B5563; font-size: 15px; line-height: 22px; margin: 0 0 8px 0;">梅兰芳纪念馆主题宣传册，融合传统与现代设计元素，突出文化氛围。</p>
+        <div style="color: #6B7280; font-size: 14px; margin-top: 4px;">相关软件：Photoshop、</div>
+      </div>
+    </div>
+    <div class="work-block">
+      <img src="D:/桌面/大一/ai/渐变海报.jpg" alt="作品3" id="img3" onclick="showModal3()">
+      <div class="designer-works-intro" style="margin: 18px 0 0 0;">
+        <h3 style="color: #FF69B4; font-size: 20px; font-weight: bold; margin-bottom: 8px;">作品：视觉海报设计</h3>
+        <p style="color: #4B5563; font-size: 15px; line-height: 22px; margin: 0 0 8px 0;">渐变海报，色彩丰富，表现科技与未来感，达到传播的目的。</p>
+        <div style="color: #6B7280; font-size: 14px; margin-top: 4px;">相关软件：Illustrator</div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal2" onclick="hideModal2()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-btn left" onclick="prevImg(event)">&#8592;</button>
+      <img id="modal2-img" src="D:/桌面/梅兰芳纪念馆比赛/未标题-1-恢复的.jpg" alt="大图2">
+      <button class="modal-btn right" onclick="nextImg(event)">&#8594;</button>
+    </div>
+  </div>
+  <div class="modal" id="modal" onclick="hideModal()">
+    <img src="D:/建模牛潇可3414010312/渲染图背景统一.jpg" alt="作品1大图">
+  </div>
+  <div class="modal" id="modal3" onclick="hideModal3()">
+    <img src="D:/桌面/大一/ai/渐变海报.jpg" alt="作品3大图">
+  </div>
+  <script>
+    function showModal() {
+      document.getElementById('modal').classList.add('active');
+    }
+    function hideModal() {
+      document.getElementById('modal').classList.remove('active');
+    }
+    // 作品2弹窗
+    const imgs2 = [
+      'D:/桌面/梅兰芳纪念馆比赛/未标题-1-恢复的.jpg',
+      'D:/桌面/梅兰芳纪念馆比赛/未标题-2.jpg'
+    ];
+    let idx2 = 0;
+    function showModal2() {
+      idx2 = 0;
+      document.getElementById('modal2-img').src = imgs2[idx2];
+      document.getElementById('modal2').classList.add('active');
+    }
+    function hideModal2() {
+      document.getElementById('modal2').classList.remove('active');
+    }
+    function prevImg(e) {
+      e.stopPropagation();
+      idx2 = (idx2 + imgs2.length - 1) % imgs2.length;
+      document.getElementById('modal2-img').src = imgs2[idx2];
+    }
+    function nextImg(e) {
+      e.stopPropagation();
+      idx2 = (idx2 + 1) % imgs2.length;
+      document.getElementById('modal2-img').src = imgs2[idx2];
+    }
+    function showModal3() {
+      document.getElementById('modal3').classList.add('active');
+    }
+    function hideModal3() {
+      document.getElementById('modal3').classList.remove('active');
+    }
+  </script>
+</body>
+</html> 
