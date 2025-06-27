@@ -4,7 +4,7 @@
 
 这是一个专业的设计师个人作品集网站，展示牛潇可的创意设计作品。网站采用现代化的设计风格，包含平面设计、动态设计和应用设计三大专业领域的作品展示。
 
-**在线访问**: [nicole.github.io](https://nicole.github.io)
+**在线访问**: [nicole.github.io](https://nicole870.github.io/nicole.github.io/)
 
 ## ✨ 主要功能
 
